@@ -47,7 +47,7 @@ export const wardSlice = createSlice({
                 state.status = 'success';
                 state.wards = action.payload
             })
-            .addCase(fetchWards.rejected, (state,action) => {
+            .addCase(fetchWards.rejected, (state, action) => {
                 state.status = 'error';
                 state.error = action.error.message
             })
@@ -68,7 +68,6 @@ export const wardSlice = createSlice({
             .addCase(updateWardAsync.fulfilled, (state, action) => {
                 state.status = 'success';
                 const updatedWard = action.payload;
-                console.log(updatedWard,"uwd")
                 const index = state.wards.findIndex((w) => w._id === updatedWard._id)
                 if (index !== -1) {
                     state.wards[index] = updatedWard;

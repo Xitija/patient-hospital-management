@@ -16,8 +16,6 @@ const WardView = () => {
         }
     }, [status,dispatch])
 
-    console.log(wards)
-
     return (
         <div>
             <h1>Ward View</h1>

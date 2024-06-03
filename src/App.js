@@ -6,6 +6,7 @@ import WardView from './components/WardView';
 import WardForm from './features/ward/WardForm';
 import WardDetail from './features/ward/WardDetail';
 import './App.css';
+import HospitalView from './components/HospitalView';
 
 function App() {
   return (
@@ -20,11 +21,14 @@ function App() {
             <li>
               <Link to='/wards'>Wards</Link>
             </li>
-
+            <li>
+              <Link to='/hospital'>Hospital</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
           <Route path='/wards' element={<WardView />} />
+          <Route path='/hospital' element={<HospitalView/>} />
           <Route path='/' element={<PatientView />} />
           <Route path='/patients/:id' element={<PatientDetail />} />
           <Route path='/patients/add' element={<PatientForm />} />

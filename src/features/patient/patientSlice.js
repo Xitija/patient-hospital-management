@@ -47,7 +47,7 @@ export const patientSlice = createSlice({
                 state.status = 'success';
                 state.patients = action.payload
             })
-            .addCase(fetchPatients.rejected, (state,action) => {
+            .addCase(fetchPatients.rejected, (state, action) => {
                 state.status = 'error';
                 state.error = action.error.message
             })
@@ -82,7 +82,6 @@ export const patientSlice = createSlice({
             })
             .addCase(deletePatientAsync.fulfilled, (state, action) => {
                 state.status = 'success';
-                console.log(action,"action")
                 state.patients = state.patients.filter((patient) => patient._id !== action.payload.deletedPatient._id)
             })
             .addCase(deletePatientAsync.rejected, (state, action) => {

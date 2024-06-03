@@ -16,8 +16,6 @@ const PatientView = () => {
         }
     }, [status,dispatch])
 
-    console.log(patients)
-
     return (
         <div>
             <h1>Patient View</h1>
