@@ -81,11 +81,15 @@ const HospitalView = () => {
       <h3>Top Performing Ward</h3>
       <p>
         Based on Highest Number of Patients is Ward{' '}
-        {hospitalStats.topPerformingWard.byHighestPatients}
+        {hospitalStats.topPerformingWard?.byHighestPatients
+          ? hospitalStats.topPerformingWard.byHighestPatients
+          : 0}
       </p>
       <p>
         Based on Maximum Length of Stay is Ward{' '}
-        {hospitalStats.topPerformingWard.byLengthOfStay}
+        {hospitalStats.topPerformingWard?.byLengthOfStay
+          ? hospitalStats.topPerformingWard.byLengthOfStay
+          : 0}
       </p>
       <h3>Ward Wise Patients</h3>
       Ward Number - Patients Per Ward
