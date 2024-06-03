@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import PatientView from './components/PatientView';
+import PatientDetail from './features/patient/PatientDetail';
+import PatientForm from './features/patient/PatientForm';
+import WardView from './components/WardView';
+import WardForm from './features/ward/WardForm';
+import WardDetail from './features/ward/WardDetail';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div>Hospital Management Sysytem</div>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/'>Patients</Link>
+            </li>
+            <li>
+              <Link to='/wards'>Wards</Link>
+            </li>
+
+          </ul>
+        </nav>
+        <Routes>
+          <Route path='/wards' element={<WardView />} />
+          <Route path='/' element={<PatientView />} />
+          <Route path='/patients/:id' element={<PatientDetail />} />
+          <Route path='/patients/add' element={<PatientForm />} />
+          <Route path='/patients/edit/:id' element={<PatientForm />} />
+          <Route path='/wards/:id' element={<WardDetail />} />
+          <Route path='/wards/add' element={<WardForm />} />
+          <Route path='/wards/edit/:id' element={<WardForm />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
