@@ -27,6 +27,20 @@ const PatientView = () => {
             <h3>
                 <Link to={`/patients/add`}>Add Patient</Link>
             </h3>
+            {error && (
+        <div>
+          <h2>Server Not Active 😨</h2>
+          <h3>
+            <a
+              href="https://drive.google.com/file/d/1N8tG1VmqCCBUCNQu9sqTpbz-jFMIG-6l/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Click here to view video
+            </a>
+          </h3>
+        </div>
+      )}
         </div>
     )
 }
